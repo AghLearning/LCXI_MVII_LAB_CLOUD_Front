@@ -1,0 +1,30 @@
+name: Despliegue a Github Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v3
+      - name: Configuramos entorno git en ubuntu para conexión con Github
+        run: |
+         mkdir -p ~/.ssh/
+         echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
+         sudo chmod 600 ~/.ssh/id_rsa
+      - name: Creamos la configuración de git para identificación
+        run: |
+          git config --global user.email "gh-pages@agh.local
+          git config --global user.name "gh-pages"
+      - name: Instalación dependencias de npm en maquina de despliegue (solo prod.)
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Despliegue
+        run: npm run deploy -- -r git@github.com:AghLearning/LCXI_MVII_LAB_CLOUD_Front.git
+
+
