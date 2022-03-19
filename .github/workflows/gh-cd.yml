@@ -18,7 +18,7 @@ jobs:
          sudo chmod 600 ~/.ssh/id_rsa
       - name: Creamos la configuración de git para identificación
         run: |
-          git config --global user.email "gh-pages@agh.local
+          git config --global user.email "gh-pages@agh.local"
           git config --global user.name "gh-pages"
       - name: Instalación dependencias de npm en maquina de despliegue (solo prod.)
         run: npm ci
