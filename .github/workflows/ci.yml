@@ -1,0 +1,19 @@
+name: Integración continua, ejecutamos los tests
+
+on:
+  pull_request
+
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v3
+      - name: Instalación
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm run test
+
