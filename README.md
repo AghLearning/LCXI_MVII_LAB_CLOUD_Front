@@ -70,9 +70,25 @@ c) Automatizamos el proceso con Github Actions:
   ```
   ssh-keygen -m PEM -t rsa -C "gh-pages@agh.local"
   ```
-  - Añadimos la clave publica
+  - Añadimos la clave publica a GitHub Settings (Deploy Keys)
+  - Añadimos la clave privada a GitHub Settings (Secrets)
+
 * Publicamos la rama `main`
 
+___
+
+## Paso 4 (Opcional): Crear action para Continuous Integration al hacer un pull-request.
+
+* Creamos una rama de feature para poder luego integrar con main.
+* Definimos el workflow de Continuos Integration `ci.yml`
+
+___
+
+## Paso 5 (Opcional): Desplegar Front en Heroku
+
+___
+
+## Paso 6 (Opcional): Desplegar Front en Vercel
 
 
 
