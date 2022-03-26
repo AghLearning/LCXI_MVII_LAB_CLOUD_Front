@@ -81,10 +81,17 @@ ___
 
 * Creamos una rama de feature para poder luego integrar con main.
 * Definimos el workflow de Continuos Integration `ci.yml`
+* Publicamos la rama de la feature.
+* Hacemos la pull request:
+  - Al hacer el pull request se ejecutará la Github action de ci
+  - Al hacer el merge con la rama principal se ejecutaran las actions de CD.
 
 ___
 
 ## Paso 5 (Opcional): Desplegar Front en Heroku
+
+1) Creamos la aplicacion en Heroku: ``
+2)
 
 ___
 
